@@ -29,7 +29,7 @@
 global.grav = 0.2;
 hsp = 0;
 vsp = 0;
-jumpspeed = 11;
+jumpspeed = 10.05
 movespeed = 4;
 </string>
           </argument>
@@ -62,7 +62,7 @@ key_jump = keyboard_check_pressed(vk_space);
 //React to inputs
 move = key_left + key_right;
 hsp = move * movespeed;
-if (vsp &lt; 10) vsp += global.grav;
+if (vsp &lt; 20) vsp += global.grav;
  
 if (place_meeting(x,y+1,obj_floor))
 {
