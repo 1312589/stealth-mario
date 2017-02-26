@@ -10,6 +10,7 @@
     <sprite>sprites\spr_brick</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_floor</sprite>
+    <sprite>sprites\spr_goomba</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -18,6 +19,7 @@
     <object>objects\obj_brick</object>
     <object>objects\obj_player</object>
     <object>objects\obj_floor</object>
+    <object>objects\obj_goomba</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game0</room>
