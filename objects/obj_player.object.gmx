@@ -103,8 +103,6 @@ if (place_meeting(x+hsp,y,obj_box))
     }
     hsp = 0;
 }
-
-x += hsp;
  
 //Vertical Collision
 if (place_meeting(x,y+vsp,obj_floor))
@@ -131,7 +129,37 @@ if (place_meeting(x,y+vsp,obj_box))
     }
     vsp = 0;
 }
+//Killing enemies
+//Goombas
+if (place_meeting(x + 1, y, obj_goomba)) {
+    if (place_meeting(x, y + 1, obj_goomba)) {
+        with (instance_nearest(x, y, obj_goomba)) {
+            instance_destroy();
+        }
+    }
+    else {
+        instance_destroy();
+    }
+}
+//Koopas
+if (place_meeting(x + 1, y, obj_koopa)) {
+    if (place_meeting(x, y + 1, obj_koopa)) {
+        with (instance_nearest(x, y, obj_koopa)) {
+            instance_destroy();
+        }
+    }
+    else {
+        instance_destroy();
+    }
+}
+
+//Dying
+//Right
+//Goomba
+
+//Moving
 y += vsp;
+x += hsp;
 </string>
           </argument>
         </arguments>

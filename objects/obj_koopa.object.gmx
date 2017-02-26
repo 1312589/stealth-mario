@@ -132,16 +132,20 @@ if (state = -2) {
 }
 
 //Cone of sight
-origin_x = obj_player.x - x;
-origin_y = obj_player.y - y;
+if (instance_exists(obj_player)) {
+    origin_x = obj_player.x - x;
+    origin_y = obj_player.y - y;
+}
 //Looking left
 if (state = -1) {
-    if (!collision_line(x, y, obj_player.x, obj_player.y, obj_floor, true, false)) {
-        if (origin_y &lt; 140) {
-            if (origin_y &gt; -140) {
-                if (origin_x &gt; -200) {
-                    if (origin_x &lt; 0) {
-                        alert = 1;
+    if (instance_exists(obj_player)) {
+        if (!collision_line(x, y, obj_player.x, obj_player.y, obj_floor, true, false)) {
+            if (origin_y &lt; 140) {
+                if (origin_y &gt; -140) {
+                    if (origin_x &gt; -200) {
+                        if (origin_x &lt; 0) {
+                            alert = 1;
+                        }
                     }
                 }
             }
@@ -150,22 +154,19 @@ if (state = -1) {
 }
 //Looking right
 if (state = 1) {
-    if (!collision_line(x, y, obj_player.x, obj_player.y, obj_floor, true, false)) {
-        if (origin_y &lt; 140) {
-            if (origin_y &gt; -140) {
-                if (origin_x &lt; 200) {
-                    if (origin_x &gt; 0) {
-                        alert = 1;
+    if (instance_exists(obj_player)) {
+        if (!collision_line(x, y, obj_player.x, obj_player.y, obj_floor, true, false)) {
+            if (origin_y &lt; 140) {
+                if (origin_y &gt; -140) {
+                    if (origin_x &lt; 200) {
+                        if (origin_x &gt; 0) {
+                            alert = 1;
+                        }
                     }
                 }
             }
         }
     }
-}
-
-//Being killed
-if (place_meeting(x, y, obj_player)) {
-    instance_destroy()
 }
 
 //Alert
